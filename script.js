@@ -30,6 +30,15 @@ const personalMovieDB = {
 
 
 
+for (let i = 1; i <=2; i++) {
+    let film = prompt('Один из последних просмотренных фильмов?', 'Logan'),
+        rating = prompt('На сколько оцените его?', '8.1');
+    personalMovieDB.movies[film] = rating;
+}
+console.log(personalMovieDB);
+
+
+
 for (let i = 1; i <= 2; i++) {
     let film = prompt('Один из последних просмотренных фильмов?', 'Logan'),
         rating = prompt('На сколько оцените его?', '8.1');
@@ -70,4 +79,22 @@ while (i < 2) {
         console.log('Error');
     }
 }
+console.log(personalMovieDB);
+
+
+
+let a = 1;
+do {
+    let film = prompt('Один из последних просмотренных фильмов?', 'Logan'),
+        rating = prompt('На сколько оцените его?', '8.1');
+        a++;
+    if ((film && rating != '') && (film && rating != null) && (film.length<= 50)) {
+        personalMovieDB.movies[film] = rating;
+        console.log('Done');
+    } else {
+        a--;
+        console.log('Error');
+    }
+}
+while (a <= 2);
 console.log(personalMovieDB);
