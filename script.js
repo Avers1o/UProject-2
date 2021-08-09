@@ -54,3 +54,20 @@ if (personalMovieDB.count < 10) {
 } else {
     alert('Произошла ошибка!');
 }
+
+
+
+let i = 0;
+while (i < 2) {
+    let film = prompt('Один из последних просмотренных фильмов?', 'Logan'),
+        rating = prompt('На сколько оцените его?', '8.1');
+    i++;
+    if ((film && rating != '') && (film && rating != null) && (film.length <= 50)) {
+        personalMovieDB.movies[film] = rating;
+        console.log('Done');
+    } else {
+        i--;
+        console.log('Error');
+    }
+}
+console.log(personalMovieDB);
