@@ -30,9 +30,15 @@ const personalMovieDB = {
 
 
 
-for (let i = 1; i <=2; i++) {
+for (let i = 1; i <= 2; i++) {
     let film = prompt('Один из последних просмотренных фильмов?', 'Logan'),
         rating = prompt('На сколько оцените его?', '8.1');
-    personalMovieDB.movies[film] = rating;
+    if ((film && rating != '') && (film && rating != null) && (film.length <= 50)) {
+        personalMovieDB.movies[film] = rating;
+        console.log('Done');
+    } else {
+        i--;
+        console.log('Error');
+    }
 }
 console.log(personalMovieDB);
